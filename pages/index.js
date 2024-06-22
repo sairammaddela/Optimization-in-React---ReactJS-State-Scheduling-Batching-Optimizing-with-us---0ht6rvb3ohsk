@@ -29,12 +29,17 @@ const isArmstrongNumber = (number) => {
   return sum === number;
 };
 
+
+
 export default function Home() {
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
-
-  const isArmstrong = isArmstrongNumber(num1);
-  const isPrime = isPrimeNumber(num2);
+  var isArmstrong;
+var isPrime;
+  const memo1=useMemo(()=>{isArmstrong = isArmstrongNumber(num1);},[num1]);
+  const memo2=useMemo(()=>{isPrime = isPrimeNumber(num2);},[num2]);
+  
+  
   return (
     <>
       <div className="App">
